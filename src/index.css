@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #050714;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Moon glow text */
+.moon-text-glow {
+  text-shadow: 0 0 20px rgba(244, 228, 188, 0.5), 0 0 40px rgba(244, 228, 188, 0.2);
+}
+
+/* Custom scrollbar for modal */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(10, 15, 36, 0.5);
+  border-radius: 3px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(244, 228, 188, 0.3);
+  border-radius: 3px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 228, 188, 0.5);
+}
+
+/* Water shimmer reflection */
+.water-shimmer {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(74, 138, 181, 0.05) 30%,
+    rgba(74, 138, 181, 0.1) 50%,
+    rgba(74, 138, 181, 0.05) 70%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  animation: shimmer-move 3s linear infinite;
+}
+
+@keyframes shimmer-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 4px; }
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #fdf6e3 0%, #f4e4bc 50%, #d4c5a0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Moon surface texture */
+.moon-surface {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(0,0,0,0.08) 1px, transparent 2px),
+    radial-gradient(circle at 65% 45%, rgba(0,0,0,0.06) 1.5px, transparent 2.5px),
+    radial-gradient(circle at 45% 65%, rgba(0,0,0,0.05) 1px, transparent 2px),
+    radial-gradient(circle at 70% 70%, rgba(0,0,0,0.04) 1px, transparent 1.5px),
+    radial-gradient(circle at 20% 50%, rgba(0,0,0,0.03) 0.8px, transparent 1.5px);
+  background-size: 100% 100%;
+}
